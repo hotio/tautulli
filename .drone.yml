@@ -24,3 +24,10 @@ steps:
       from_secret: docker_password
     repo: hotio/tautulli
     auto_tag: true
+
+- name: microbadger
+  image: plugins/webhook
+  pull: always
+  settings:
+    urls:
+      - https://hooks.microbadger.com/images/hotio/tautulli/VME3Mi2E6YGnJcQ1KsOtU49lYis=
