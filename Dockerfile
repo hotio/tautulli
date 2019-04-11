@@ -21,4 +21,3 @@ RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v2.1.28.tar.gz" | t
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
 COPY root/ /
-
