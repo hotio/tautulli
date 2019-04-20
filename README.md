@@ -1,8 +1,8 @@
 # [Tautulli](https://github.com/Tautulli/Tautulli)
 
-[![](https://images.microbadger.com/badges/image/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/commit/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own commit badge on microbadger.com")
+[![badge](https://images.microbadger.com/badges/image/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own image badge on microbadger.com")
+[![badge](https://images.microbadger.com/badges/version/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own version badge on microbadger.com")
+[![badge](https://images.microbadger.com/badges/commit/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own commit badge on microbadger.com")
 
 ## Donations
 
