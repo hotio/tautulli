@@ -1,11 +1,7 @@
 FROM hotio/base
 
 ARG DEBIAN_FRONTEND="noninteractive"
-ARG COMMIT
-ARG TAG
 
-ENV COMMIT="${COMMIT}" TAG="${TAG}"
-ENV APP="Tautulli"
 EXPOSE 8181
 HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:8181 || exit 1
 
@@ -24,3 +20,9 @@ RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v2.1.34.tar.gz" | t
     chmod -R u=rwX,go=rX "${APP_DIR}"
 
 COPY root/ /
+
+ARG COMMIT
+ARG TAG
+ARG APP
+
+ENV COMMIT="${COMMIT}" TAG="${TAG}" APP="${APP}"
