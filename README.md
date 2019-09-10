@@ -1,7 +1,8 @@
-# [docker-tautulli](https://github.com/hotio/docker-tautulli)
+# tautulli
 
-![Docker Pulls](https://img.shields.io/docker/pulls/hotio/tautulli?style=flat-square)
-![Drone (cloud)](https://img.shields.io/drone/build/hotio/docker-tautulli?style=flat-square)
+[![GitHub](https://img.shields.io/badge/source-github-lightgrey?style=flat-square)](https://github.com/hotio/docker-tautulli)
+[![Docker Pulls](https://img.shields.io/docker/pulls/hotio/tautulli?style=flat-square)](https://hub.docker.com/r/hotio/tautulli)
+[![Drone (cloud)](https://img.shields.io/drone/build/hotio/docker-tautulli?style=flat-square)](https://cloud.drone.io/hotio/docker-tautulli)
 
 ## Donations
 
