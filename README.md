@@ -1,8 +1,7 @@
-# [Tautulli](https://github.com/Tautulli/Tautulli)
+# [docker-tautulli](https://github.com/hotio/docker-tautulli)
 
-[![badge](https://images.microbadger.com/badges/image/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own image badge on microbadger.com")
-[![badge](https://images.microbadger.com/badges/version/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own version badge on microbadger.com")
-[![badge](https://images.microbadger.com/badges/commit/hotio/tautulli.svg)](https://microbadger.com/images/hotio/tautulli "Get your own commit badge on microbadger.com")
+![Docker Pulls](https://img.shields.io/docker/pulls/hotio/tautulli?style=flat-square)
+![Drone (cloud)](https://img.shields.io/drone/build/hotio/docker-tautulli?style=flat-square)
 
 ## Donations
 
