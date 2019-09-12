@@ -14,12 +14,9 @@ RUN apt update && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-# install app
-# https://github.com/Tautulli/Tautulli/releases
-RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v2.1.34.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
-    chmod -R u=rwX,go=rX "${APP_DIR}"
-
 COPY root/ /
 
-ARG TAG
-ENV TAG="${TAG}"
+# install app
+RUN version=$(sed -n '1p' /versions/tautulli) && \
+    curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${version}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
+    chmod -R u=rwX,go=rX "${APP_DIR}"
