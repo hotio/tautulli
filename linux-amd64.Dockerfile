@@ -17,7 +17,9 @@ RUN apt update && \
 
 COPY root/ /
 
+# https://github.com/Tautulli/Tautulli/releases
+ENV TAUTULLI_VERSION=2.1.34
+
 # install app
-RUN version=$(sed -n '1p' /versions/tautulli) && \
-    curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${version}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
+RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${TAUTULLI_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
     chmod -R u=rwX,go=rX "${APP_DIR}"
