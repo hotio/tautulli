@@ -4,7 +4,6 @@ FROM hotio/base:${BRANCH}
 ARG DEBIAN_FRONTEND="noninteractive"
 
 EXPOSE 8181
-HEALTHCHECK --interval=60s CMD curl -fsSL http://localhost:8181 || exit 1
 
 # install packages
 RUN apt update && \
