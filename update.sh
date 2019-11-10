@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###################
-version=$(curl -fsSL "https://api.github.com/repos/Tautulli/Tautulli/releases/latest" | jq -r .tag_name | sed s/v//g)
+version=$(curl -fsSL "https://api.github.com/repos/Tautulli/Tautulli/releases" | jq -r .[0].tag_name | sed s/v//g)
 app=TAUTULLI
 ###################
 
