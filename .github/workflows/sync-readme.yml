@@ -1,0 +1,18 @@
+name: Sync README
+on: push
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build slug
+      run: |
+        echo "##[set-output name=slug;]${GITHUB_REPOSITORY//docker-/}"
+      id: build_slug
+    - name: Sync README
+      uses: meeDamian/sync-readme@v1.0.5
+      with:
+        pass: ${{ secrets.DOCKER_PASS }}
+        description: true
+        slug: ${{ steps.build_slug.outputs.slug }}
