@@ -6,13 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Build slug
+    - name: Create outputs
       run: |
         echo "##[set-output name=slug;]${GITHUB_REPOSITORY//docker-/}"
-      id: build_slug
+        echo "##[set-output name=description;]$(curl -s "https://api.github.com/repos/${GITHUB_REPOSITORY}" | jq -r '.description')"
+      id: create_outputs
     - name: Sync README
       uses: meeDamian/sync-readme@v1.0.5
       with:
         pass: ${{ secrets.DOCKER_PASS }}
-        description: true
-        slug: ${{ steps.build_slug.outputs.slug }}
+        description: ${{ steps.create_outputs.outputs.description }}
+        slug: ${{ steps.create_outputs.outputs.slug }}
