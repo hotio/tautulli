@@ -46,6 +46,38 @@ depends_on:
 
 ---
 kind: pipeline
+name: linux-amd64-test
+
+clone:
+  disable: true
+
+platform:
+  os: linux
+  arch: amd64
+
+trigger:
+  event:
+    - push
+
+steps:
+- name: test
+  image: ${DRONE_REPO_OWNER}/base
+  pull: always
+  commands:
+    - sleep 10
+    - curl testservice:8181
+    - exit 1
+
+services:
+- name: testservice
+  image: ${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}:${DRONE_COMMIT_BRANCH}-${DRONE_COMMIT_SHA:0:7}-${DRONE_BUILD_NUMBER}-${DRONE_STAGE_OS}-${DRONE_STAGE_ARCH}
+  pull: always
+
+depends_on:
+  - linux-amd64
+
+---
+kind: pipeline
 name: linux-arm64
 
 platform:
@@ -181,6 +213,6 @@ steps:
       - linux/arm64
 
 depends_on:
-  - linux-amd64
+  - linux-amd64-test
   - linux-arm64
   - linux-arm
