@@ -9,7 +9,7 @@
 Just the basics to get the container running:
 
 ```shell
-docker run --rm --name tautulli -p 8181:8181 -v /tmp/tautulli:/config -e TZ=Etc/UTC hotio/tautulli
+docker run --rm --name tautulli -p 8181:8181 -v /tmp/tautulli:/config hotio/tautulli
 ```
 
 The environment variables below are all optional, the values you see are the defaults.
@@ -17,7 +17,8 @@ The environment variables below are all optional, the values you see are the def
 ```shell
 -e PUID=1000
 -e PGID=1000
--e UMASK=022
+-e UMASK=002
+-e TZ="Etc/UTC"
 ```
 
 ## Tags
