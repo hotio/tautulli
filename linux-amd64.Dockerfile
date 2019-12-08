@@ -2,6 +2,8 @@ FROM hotio/base
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
+ENV TAUTULLI_DOCKER="True"
+
 EXPOSE 8181
 
 # install packages
