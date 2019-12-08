@@ -3,8 +3,8 @@
 if [[ "${DRONE_BUILD_STATUS}" == "success" ]]; then
     message="succeeded"
     color="65280"
-    [[ -f screenshot.log ]] && screenshot_url=$(cat screenshot.log)
-    [[ -n ${screenshot_url} ]] && screenshot_message="\n[screenshot](${screenshot_url})"
+    [[ -f "/drone/src/screenshot.log" ]] && screenshot_url=$(cat "/drone/src/screenshot.log")
+    [[ -n "${screenshot_url}" ]] && screenshot_message="\n[screenshot](${screenshot_url})"
 else
     message="failed"
     color="16711680"
