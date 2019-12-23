@@ -36,14 +36,12 @@ elif [[ ${1} == "checkservice" ]]; then
     currenttime=$(date +%s); maxtime=$((currenttime+60)); while (! curl -fsSL ${SERVICE} > /dev/null) && [[ "$currenttime" -lt "$maxtime" ]]; do sleep 1; currenttime=$(date +%s); done
     curl -fsSL ${SERVICE} > /dev/null
 elif [[ ${1} == "checkdigests" ]]; then
-    docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
-    image="base"
-    docker pull hotio/${image}:stable-linux-arm64
-    docker inspect --format='{{index .RepoDigests 0}}' hotio/${image}:stable-linux-arm64 >  upstream_digests.txt
-    docker pull hotio/${image}:stable-linux-arm
-    docker inspect --format='{{index .RepoDigests 0}}' hotio/${image}:stable-linux-arm   >> upstream_digests.txt
-    docker pull hotio/${image}:stable-linux-amd64
-    docker inspect --format='{{index .RepoDigests 0}}' hotio/${image}:stable-linux-amd64 >> upstream_digests.txt
+    docker pull hotio/base:stable-linux-arm64
+    docker pull hotio/base:stable-linux-arm
+    docker pull hotio/base:stable-linux-amd64
+    docker inspect --format='{{index .RepoDigests 0}}' hotio/base:stable-linux-arm64 >  upstream_digests.txt
+    docker inspect --format='{{index .RepoDigests 0}}' hotio/base:stable-linux-arm   >> upstream_digests.txt
+    docker inspect --format='{{index .RepoDigests 0}}' hotio/base:stable-linux-amd64 >> upstream_digests.txt
 else
     version=$(curl -fsSL "https://api.github.com/repos/Tautulli/Tautulli/releases/latest" | jq -r .tag_name | sed s/v//g)
     [[ -z ${version} ]] && exit
