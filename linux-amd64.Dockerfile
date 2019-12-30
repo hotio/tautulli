@@ -16,7 +16,7 @@ RUN apt update && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # https://github.com/Tautulli/Tautulli/releases
-ARG TAUTULLI_VERSION=2.1.40
+ARG TAUTULLI_VERSION=2.1.41
 
 # install app
 RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${TAUTULLI_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
