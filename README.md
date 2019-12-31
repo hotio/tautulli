@@ -9,7 +9,7 @@
 Just the basics to get the container running:
 
 ```shell
-docker run --rm --name tautulli -p 8181:8181 -v /tmp/tautulli:/config hotio/tautulli
+docker run --rm --name tautulli -p 8181:8181 -v /<host_folder_config>:/config hotio/tautulli
 ```
 
 The environment variables below are all optional, the values you see are the defaults.
