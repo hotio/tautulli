@@ -20,6 +20,9 @@ ARG TAUTULLI_VERSION=2.1.40
 
 # install app
 RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${TAUTULLI_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
-    chmod -R u=rwX,go=rX "${APP_DIR}"
+    chmod -R u=rwX,go=rX "${APP_DIR}" && \
+    echo "None" > "${APP_DIR}/version.txt" && \
+    echo "None" > "${APP_DIR}/version.lock" && \
+    echo "v${TAUTULLI_VERSION}" > "${APP_DIR}/release.lock"
 
 COPY root/ /
