@@ -9,9 +9,9 @@ EXPOSE 8181
 # install packages
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
-        python-pkg-resources \
+        python-pkg-resources libxml2 libxslt1.1 \
         python-pip python-setuptools && \
-    pip install --no-cache-dir --upgrade plexapi pyopenssl pycryptodomex && \
+    pip install --no-cache-dir --upgrade plexapi pyopenssl pycryptodomex lxml && \
 # clean up
     apt purge -y python-pip python-setuptools && \
     apt autoremove -y && \

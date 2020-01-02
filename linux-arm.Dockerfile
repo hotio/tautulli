@@ -9,11 +9,11 @@ EXPOSE 8181
 # install packages
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
-        python-pkg-resources \
-        python-pip python-setuptools build-essential python-all-dev libffi-dev libssl-dev && \
-    pip install --no-cache-dir --upgrade plexapi pyopenssl pycryptodomex && \
+        python-pkg-resources libxml2 libxslt1.1 \
+        python-pip python-setuptools build-essential python-all-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev && \
+    pip install --no-cache-dir --upgrade plexapi pyopenssl pycryptodomex lxml && \
 # clean up
-    apt purge -y python-pip python-setuptools build-essential python-all-dev libffi-dev libssl-dev && \
+    apt purge -y python-pip python-setuptools build-essential python-all-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
