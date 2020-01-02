@@ -10,10 +10,10 @@ EXPOSE 8181
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
         python-pkg-resources python-pycryptodome \
-        python-pip python-setuptools && \
+        python-pip python-setuptools build-essential && \
     pip install --no-cache-dir --upgrade plexapi pyopenssl && \
 # clean up
-    apt purge -y python-pip python-setuptools && \
+    apt purge -y python-pip python-setuptools build-essential && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
