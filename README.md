@@ -1,6 +1,6 @@
 # tautulli
 
-![Logo](https://raw.githubusercontent.com/hotio/unraid-templates/master/hotio/img/tautulli.png)  
+<img src="https://raw.githubusercontent.com/hotio/unraid-templates/master/hotio/img/tautulli.png" alt="Logo" height="130" width="130">
 
 [![GitHub](https://img.shields.io/badge/source-github-lightgrey)](https://github.com/hotio/docker-tautulli)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hotio/tautulli)](https://hub.docker.com/r/hotio/tautulli)
