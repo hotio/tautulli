@@ -10,10 +10,10 @@ EXPOSE 8181
 RUN apt update && \
     apt install -y --no-install-recommends --no-install-suggests \
         python3-pkg-resources libxml2 libxslt1.1 \
-        python3-pip python3-setuptools && \
+        python3-pip python3-setuptools build-essential python3-all-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev && \
     pip3 install --no-cache-dir --upgrade plexapi pyopenssl pycryptodomex lxml && \
 # clean up
-    apt purge -y python3-pip python3-setuptools && \
+    apt purge -y python3-pip python3-setuptools build-essential python3-all-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev && \
     apt autoremove -y && \
     apt clean && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
