@@ -2,7 +2,7 @@ FROM hotio/base@sha256:5c748f472fd4dda9c2332dbce09046f9b419d6776083ec17df1d4d837
 ENV TAUTULLI_DOCKER="True"
 EXPOSE 8181
 
-RUN apk add --no-cache python3 py3-lxml py3-openssl && \
+RUN apk add --no-cache python3 py3-lxml py3-openssl py3-setuptools && \
     apk add --no-cache --virtual=build-dependencies py3-pip make gcc g++ python3-dev && \
     pip3 install --no-cache-dir --upgrade plexapi pycryptodomex && \
     apk del --purge build-dependencies
