@@ -2,6 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/hotio/docker-tautulli/master/img/tautulli.png" alt="Logo" height="130" width="130">
 
+![Base](https://img.shields.io/badge/base-alpine-blue)
 [![GitHub](https://img.shields.io/badge/source-github-lightgrey)](https://github.com/hotio/docker-tautulli)
 [![Docker Pulls](https://img.shields.io/docker/pulls/hotio/tautulli)](https://hub.docker.com/r/hotio/tautulli)
 [![Discord](https://img.shields.io/discord/610068305893523457?color=738ad6&label=discord&logo=discord&logoColor=white)](https://discord.gg/3SnkuKp)
