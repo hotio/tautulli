@@ -12,4 +12,4 @@ redirect_cmd() {
 }
 
 # shellcheck disable=SC2086
-redirect_cmd exec s6-setuidgid hotio python "${APP_DIR}/Tautulli.py" --nolaunch --config "${CONFIG_DIR}/app/config.ini" --datadir "${CONFIG_DIR}/app" ${ARGS}
+redirect_cmd exec s6-setuidgid hotio python3 "${APP_DIR}/Tautulli.py" --nolaunch --config "${CONFIG_DIR}/app/config.ini" --datadir "${CONFIG_DIR}/app" ${ARGS}

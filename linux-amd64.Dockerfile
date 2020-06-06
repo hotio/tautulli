@@ -1,30 +1,17 @@
-FROM hotio/base@sha256:18fdbba196e1c6efd5c91588dbefb5223298c4ba48b3deb7a969ff38990ff366
-
-ARG DEBIAN_FRONTEND="noninteractive"
-
+FROM hotio/base@sha256:ad79f26c53e2c7e1ed36dba0a0686990c503835134c63d9ed5aa7951e1b45c23
 ENV TAUTULLI_DOCKER="True"
-
 EXPOSE 8181
 
-# install packages
-RUN apt update && \
-    apt install -y --no-install-recommends --no-install-suggests \
-        python python-pkg-resources libxml2 libxslt1.1 \
-        python-pip python-setuptools && \
-    pip install --no-cache-dir --upgrade plexapi pyopenssl pycryptodomex lxml && \
-# clean up
-    apt purge -y python-pip python-setuptools && \
-    apt autoremove -y && \
-    apt clean && \
-    rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+RUN apk add --no-cache python3 py3-lxml py3-openssl py3-setuptools && \
+    apk add --no-cache --virtual=build-dependencies py3-pip make gcc g++ python3-dev && \
+    pip3 install --no-cache-dir --upgrade plexapi pycryptodomex && \
+    apk del --purge build-dependencies
 
 ARG TAUTULLI_VERSION
-
-# install app
+ARG TAUTULLI_BRANCH
 RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${TAUTULLI_VERSION}.tar.gz" | tar xzf - -C "${APP_DIR}" --strip-components=1 && \
     chmod -R u=rwX,go=rX "${APP_DIR}" && \
-    echo "None" > "${APP_DIR}/version.txt" && \
-    echo "None" > "${APP_DIR}/version.lock" && \
-    echo "v${TAUTULLI_VERSION}" > "${APP_DIR}/release.lock"
+    echo "v${TAUTULLI_VERSION}" > "${APP_DIR}/version.txt" && \
+    echo "${TAUTULLI_BRANCH}" > "${APP_DIR}/branch.txt"
 
 COPY root/ /
