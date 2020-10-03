@@ -1,5 +1,3 @@
-# tautulli
-
 [<img src="https://hotio.dev/img/tautulli.png" alt="logo" height="130" width="130">](https://github.com/Tautulli/Tautulli)
 
 ![Base](https://img.shields.io/badge/base-alpine-blue)
