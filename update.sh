@@ -32,6 +32,7 @@ else
     version=$(jq -r .[0].tag_name <<< "${data}" | sed s/v//g)
     [[ -z ${version} ]] && exit 1
     echo "VERSION=${version}" > VERSION
+    echo '{"version":"'"${version}"'"}' > VERSION.json
     prerelease=$(jq -r .[0].prerelease <<< "${data}")
     if [[ ${prerelease} == true ]]; then
         echo "BRANCH=beta" >> VERSION
