@@ -31,13 +31,12 @@ else
     data=$(curl -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" -fsSL "https://api.github.com/repos/Tautulli/Tautulli/releases/latest")
     version=$(jq -r .tag_name <<< "${data}" | sed s/v//g)
     [[ -z ${version} ]] && exit 1
-    echo "VERSION=${version}" > VERSION
-    echo '{"version":"'"${version}"'"}' > VERSION.json
     prerelease=$(jq -r .prerelease <<< "${data}")
     if [[ ${prerelease} == true ]]; then
-        echo "BRANCH=beta" >> VERSION
+        branch=beta
     else
-        echo "BRANCH=master" >> VERSION
+        branch=master
     fi
+    echo '{"version":"'"${version}"'","branch":"'"${branch}"'"}' | jq . > VERSION.json
     echo "##[set-output name=version;]${version}"
 fi
