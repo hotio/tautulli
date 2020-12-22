@@ -37,6 +37,6 @@ else
     else
         branch=master
     fi
-    echo '{"version":"'"${version}"'","branch":"'"${branch}"'"}' | jq . > VERSION.json
+    echo '{"version":"'"${version}"'","git_branch":"'"${branch}"'"}' | jq . > VERSION.json
     echo "##[set-output name=version;]${version}"
 fi
