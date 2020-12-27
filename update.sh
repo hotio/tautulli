@@ -37,6 +37,8 @@ else
     else
         branch=master
     fi
-    echo '{"version":"'"${version}"'","git_branch":"'"${branch}"'"}' | jq . > VERSION.json
-    echo "##[set-output name=version;]${version}"
+    old_version=$(jq -r '.version' < VERSION.json)
+    changelog=$(jq -r '.changelog' < VERSION.json)
+    [[ "${old_version}" != "${version}" ]] && changelog="https://github.com/tautulli/tautulli/compare/v${old_version}...v${version}"
+    echo '{"version":"'"${version}"'","git_branch":"'"${branch}"'","changelog":"'"${changelog}"'"}' | jq . > VERSION.json
 fi
