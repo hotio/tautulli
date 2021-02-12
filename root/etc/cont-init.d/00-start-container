@@ -38,5 +38,6 @@ if [[ -d "${CONFIG_DIR}/app" ]]; then
         shopt -s dotglob
         mv -f "${CONFIG_DIR}/app/"* "${CONFIG_DIR}" > /dev/null 2>&1 && rmdir "${CONFIG_DIR}/app"
         shopt -u dotglob
+        sed -i -e 's#/config/app#/config#g' "${CONFIG_DIR}/config.ini"
     fi
 fi
