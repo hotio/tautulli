@@ -15,3 +15,4 @@ RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${VERSION}.tar.gz"
     echo "${GIT_BRANCH}" > "${APP_DIR}/branch.txt"
 
 COPY root/ /
+RUN chmod -R +x /etc/cont-init.d/ /etc/services.d/
