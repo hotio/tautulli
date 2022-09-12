@@ -39,5 +39,6 @@ else
     old_version=$(jq -r '.version' < VERSION.json)
     changelog=$(jq -r '.changelog' < VERSION.json)
     [[ "${old_version}" != "${version}" ]] && changelog="https://github.com/tautulli/tautulli/compare/v${old_version}...v${version}"
-    echo '{"version":"'"${version}"'","git_branch":"'"${branch}"'","changelog":"'"${changelog}"'"}' | jq . > VERSION.json
+    version_json=$(cat ./VERSION.json)
+    jq '.version = "'"${version}"'" | .git_branch = "'"${branch}"'" | .changelog = "'"${changelog}"'"' <<< "${version_json}" > VERSION.json
 fi
