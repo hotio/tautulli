@@ -4,7 +4,8 @@ ARG UPSTREAM_DIGEST_ARM64
 FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_ARM64}
 
 ENV TAUTULLI_DOCKER="True"
-EXPOSE 8181
+
+VOLUME ["${CONFIG_DIR}"]
 
 RUN apk add --no-cache python3 py3-lxml py3-openssl py3-setuptools && \
     apk add --no-cache --virtual=build-dependencies py3-pip make gcc g++ python3-dev && \
