@@ -1,8 +1,8 @@
 {
   "description": "Pre-releases",
-  "version": "2.13.2",
+  "version": "null",
   "git_branch": "master",
-  "changelog": "https://github.com/tautulli/tautulli/compare/v2.13.1...v2.13.2",
+  "changelog": "https://github.com/tautulli/tautulli/compare/v2.13.2...vnull",
   "upstream_image": "ghcr.io/hotio/base",
   "upstream_tag": "alpine",
   "upstream_digest_amd64": "sha256:7eb56465879803137e0557977e6d983abb8131a77a6b57efdb24985166aee037",
