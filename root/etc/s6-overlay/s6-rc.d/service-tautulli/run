@@ -3,4 +3,4 @@
 
 umask "${UMASK}"
 
-exec s6-setuidgid hotio python3 "${APP_DIR}/Tautulli.py" --nolaunch --config "${CONFIG_DIR}/config.ini" --datadir "${CONFIG_DIR}"
+exec s6-setuidgid hotio python3 "${APP_DIR}/Tautulli.py" --nolaunch --config "${CONFIG_DIR}/config.ini" --datadir "${CONFIG_DIR}" --port "${WEBUI_PORTS%%/*}"
