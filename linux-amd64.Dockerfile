@@ -3,7 +3,7 @@ ARG UPSTREAM_DIGEST_AMD64
 
 FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_AMD64}
 EXPOSE 8181
-ENV TAUTULLI_DOCKER="True"
+ENV TAUTULLI_DOCKER="True" WEBUI_PORTS="8181/tcp,8181/udp"
 
 RUN apk add --no-cache python3 py3-lxml py3-openssl py3-setuptools && \
     apk add --no-cache --virtual=build-dependencies py3-pip make gcc g++ python3-dev && \
