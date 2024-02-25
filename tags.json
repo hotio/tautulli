@@ -2,13 +2,13 @@
   "release": {
     "description": "Releases",
     "hide": false,
-    "last_updated": "2024-02-24T18:36:09.000Z",
-    "last_updated_url": "https://github.com/hotio/tautulli/actions/runs/8032400011",
+    "last_updated": "2024-02-25T19:29:03.000Z",
+    "last_updated_url": "https://github.com/hotio/tautulli/actions/runs/8040208042",
     "latest": true,
     "tags": [
       "release",
       "release-2.13.4",
-      "release-d305957"
+      "release-f136692"
     ]
   },
   "testing": {
