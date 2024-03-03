@@ -8,7 +8,7 @@ ENV IMAGE_STATS=${IMAGE_STATS} TAUTULLI_DOCKER="True" WEBUI_PORTS="8181/tcp,8181
 
 RUN apk add --no-cache python3 py3-lxml py3-openssl py3-setuptools && \
     apk add --no-cache --virtual=build-dependencies py3-pip make gcc g++ python3-dev && \
-    pip3 install --no-cache-dir --upgrade plexapi pycryptodomex && \
+    pip3 install --break-system-packages --no-cache-dir --upgrade plexapi pycryptodomex && \
     apk del --purge build-dependencies
 
 ARG VERSION
