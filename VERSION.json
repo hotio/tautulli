@@ -1,6 +1,6 @@
 {
   "description": "Pre-releases",
-  "git_branch": "beta",
+  "git_branch": "master",
   "test_amd64": true,
   "test_arm64": true,
   "test_url": "http://localhost:8181",
@@ -8,5 +8,5 @@
   "upstream_digest_arm64": "sha256:8b1217064599410503a0de18b1e14bd86cfc7faba3e88746974700616c186ad0",
   "upstream_image": "ghcr.io/hotio/base",
   "upstream_tag": "alpinevpn",
-  "version": "2.14.1-beta"
+  "version": "2.14.2"
 }
