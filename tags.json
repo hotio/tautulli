@@ -2,13 +2,13 @@
   "release": {
     "description": "Releases",
     "hide": false,
-    "last_updated": "2025-04-15T13:11:06.000Z",
-    "last_updated_url": "https://github.com/hotio/tautulli/actions/runs/14470037753",
+    "last_updated": "2025-04-15T14:00:47.000Z",
+    "last_updated_url": "https://github.com/hotio/tautulli/actions/runs/14471168229",
     "latest": true,
     "tags": [
       "release",
       "release-2.15.2",
-      "release-0cfac22"
+      "release-d6c117b"
     ]
   },
   "testing": {
