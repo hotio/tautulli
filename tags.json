@@ -14,13 +14,13 @@
   "testing": {
     "description": "Pre-releases",
     "hide": false,
-    "last_updated": "2025-05-07T09:39:01.000Z",
-    "last_updated_url": "https://github.com/hotio/tautulli/actions/runs/14879887661",
+    "last_updated": "2025-06-05T06:44:08.000Z",
+    "last_updated_url": "https://github.com/hotio/tautulli/actions/runs/15460143137",
     "latest": false,
     "tags": [
       "testing",
       "testing-2.15.2",
-      "testing-08ab24d"
+      "testing-95f4ce4"
     ]
   }
 }
