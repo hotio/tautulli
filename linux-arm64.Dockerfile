@@ -4,7 +4,7 @@ ARG UPSTREAM_DIGEST_ARM64
 FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_ARM64}
 EXPOSE 8181
 ARG IMAGE_STATS
-ENV IMAGE_STATS=${IMAGE_STATS} TAUTULLI_DOCKER="True" WEBUI_PORTS="8181/tcp,8181/udp"
+ENV IMAGE_STATS=${IMAGE_STATS} TAUTULLI_DOCKER="True" WEBUI_PORTS="8181/tcp"
 
 RUN apk add --no-cache python3 py3-lxml py3-openssl py3-setuptools && \
     apk add --no-cache --virtual=build-dependencies py3-pip make gcc g++ python3-dev && \
