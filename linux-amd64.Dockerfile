@@ -19,3 +19,4 @@ RUN curl -fsSL "https://github.com/Tautulli/Tautulli/archive/v${VERSION}.tar.gz"
     echo "${GIT_BRANCH}" > "${APP_DIR}/branch.txt"
 
 COPY root/ /
+RUN find /etc/s6-overlay/s6-rc.d -name "run*" -execdir chmod +x {} +
