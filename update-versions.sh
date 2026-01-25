@@ -2,7 +2,7 @@
 set -exuo pipefail
 
 version_branch="master"
-response_json=$(curl -fsSL "https://api.github.com/repos/Tautulli/Tautulli/releases/latest")
+response_json=$(curl -fsSL --header "Authorization: Bearer ${GITHUB_TOKEN}" "https://api.github.com/repos/Tautulli/Tautulli/releases/latest")
 version=$(jq -re '.tag_name' <<< "${response_json}")
 prerelease=$(jq -r '.prerelease' <<< "${response_json}")
 [[ ${prerelease} == true ]] && version_branch="beta"
