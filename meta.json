@@ -1,12 +1,13 @@
 {
   "description": "Releases",
   "latest": true,
+  "packages_hash": "ddc1fec9a0061bb9815c20b5577207cdadcabf1e",
   "test_amd64": true,
   "test_arm64": true,
   "test_url": "http://localhost:8181",
   "upstream_image": "ghcr.io/hotio/base",
   "upstream_tag": "alpinevpn",
-  "upstream_tag_sha": "alpinevpn-4ed63ea",
+  "upstream_tag_sha": "alpinevpn-04f9ffe",
   "version": "2.17.1",
   "version_branch": "master"
 }
