@@ -1,5 +1,5 @@
 libxml2=2.13.9-r1
-libxslt=1.1.43-r3
+libxslt=1.1.43-r4
 py3-cffi-pyc=1.17.1-r1
 py3-cffi=1.17.1-r1
 py3-cparser-pyc=2.22-r1
